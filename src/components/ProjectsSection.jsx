@@ -32,6 +32,27 @@ const projects = [
     demoUrl: "https://fitness-website-red.vercel.app/",
     githubUrl: "https://github.com/11saran/FitnessWebsite",
   },
+  {
+    id: 4,
+    title: "My Portfolio website",
+    description:
+      "Created a personal portfolio website to showcase my projects, skills, and development experience with a modern, responsive design.",
+    image: "/projects/project 04.png",
+    tags: ["React.js", "Tailwind CSS"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/11saran/my_portfolio",
+  },
+  {
+    id: 5,
+    title: "Home Service website",
+    description:
+      "Developed a responsive Home Service Booking platform using Next.js, featuring real-time alerts and an admin-managed dashboard.",
+    image: "/projects/project 05.png",
+    tags: ["Next.js", "Tailwind CSS"],
+    demoUrl:
+      "https://home-service-d1s5-git-main-sarans-projects-334895e6.vercel.app/",
+    githubUrl: "https://github.com/11saran/home_service",
+  },
 ];
 
 const ProjectsSection = () => {
