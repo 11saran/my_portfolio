@@ -1,36 +1,35 @@
-import React from 'react'
+import React from "react";
 import { cn } from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { useState } from "react";
 import {
+  Github,
   Instagram,
   Linkedin,
   Mail,
   MapPin,
   Phone,
   Send,
-  Twitch,
   Twitter,
 } from "lucide-react";
 
 const ContactSection = () => {
-     const { toast } = useToast();
-     const [isSubmitting, setIsSubmitting] = useState(false);
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-     const handleSubmit = (e) => {
-       e.preventDefault();
+  const handleSubmit = (e) => {
+    e.preventDefault();
 
-       setIsSubmitting(true);
+    setIsSubmitting(true);
 
-       setTimeout(() => {
-         toast({
-           title: "Message sent!",
-           description:
-             "Thank you for your message. I'll get back to you soon.",
-         });
-         setIsSubmitting(false);
-       }, 1500);
-     };
+    setTimeout(() => {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon.",
+      });
+      setIsSubmitting(false);
+    }, 1500);
+  };
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
@@ -75,7 +74,7 @@ const ContactSection = () => {
                     href="tel:+94740868581"
                     className="text-muted-foreground hover:text-primary transition-colors"
                   >
-                    +94 740868581
+                    +94 74-086-8581
                   </a>
                 </div>
               </div>
@@ -86,7 +85,7 @@ const ContactSection = () => {
                 <div>
                   <h4 className="font-medium"> Location</h4>
                   <a className="text-muted-foreground hover:text-primary transition-colors">
-                    colombo, SriLanka
+                    Colombo, SriLanka
                   </a>
                 </div>
               </div>
@@ -95,17 +94,20 @@ const ContactSection = () => {
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
               <div className="flex space-x-4 justify-center">
-                <a href="#" target="_blank">
+                <a
+                  href="https://www.linkedin.com/in/kalaithasan-saran"
+                  target="_blank"
+                >
                   <Linkedin />
                 </a>
-                <a href="#" target="_blank">
-                  <Twitter />
+                <a href="https://github.com/11saran" target="_blank">
+                  <Github />
                 </a>
                 <a href="#" target="_blank">
                   <Instagram />
                 </a>
                 <a href="#" target="_blank">
-                  <Twitch />
+                  <Twitter />
                 </a>
               </div>
             </div>
@@ -187,6 +189,6 @@ const ContactSection = () => {
       </div>
     </section>
   );
-}
+};
 
-export default ContactSection
+export default ContactSection;
