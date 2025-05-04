@@ -16,22 +16,43 @@ import {
 const ContactSection = () => {
   const { toast } = useToast();
   const [isSubmitting, setIsSubmitting] = useState(false);
+const [data, setData] = useState({
+  name: "",
+  email: "",
+  message: "",
+});
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
+  const onSubmit = async (event) => {
+    event.preventDefault();
     setIsSubmitting(true);
+    const formData = new FormData(event.target);
 
-    setTimeout(() => {
+    formData.append("access_key", "3f8c9b62-d439-4e1c-b8dd-34790200b1a1");
+
+    const object = Object.fromEntries(formData);
+    const json = JSON.stringify(object);
+
+    const res = await fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: json,
+    }).then((res) => res.json());
+
+    if (res.success) {
       toast({
         title: "Message sent!",
         description: "Thank you for your message. I'll get back to you soon.",
       });
-      setIsSubmitting(false);
-    }, 1500);
+      setData({ name: "", email: "", message: "" });
+    }
+    setIsSubmitting(false);
   };
+
   return (
-    <section id="contact" className="py-24 px-4 relative bg-secondary/30">
+    <section id="contact" className="py-10 px-4 relative bg-secondary/30">
       <div className="container mx-auto max-w-5xl">
         <h2 className="text-3xl md:text-4xl font-bold mb-4 text-center">
           Get In <span className="text-primary"> Touch</span>
@@ -113,10 +134,7 @@ const ContactSection = () => {
             </div>
           </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
+          <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={onSubmit}>
             <h3 className="text-2xl font-semibold mb-6"> Send a Message</h3>
 
             <form className="space-y-6">
@@ -132,6 +150,8 @@ const ContactSection = () => {
                   type="text"
                   id="name"
                   name="name"
+                  value={data.name}
+                  onChange={(e) => setData({ ...data, name: e.target.value })}
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
                   placeholder="Kalaithasan Saran..."
@@ -150,9 +170,11 @@ const ContactSection = () => {
                   type="email"
                   id="email"
                   name="email"
+                  value={data.email}
+                  onChange={(e) => setData({ ...data, email: e.target.value })}
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary"
-                  placeholder="saran@gmail.com"
+                  placeholder="sarankalaithasan@gmail.com"
                 />
               </div>
 
@@ -167,6 +189,10 @@ const ContactSection = () => {
                 <textarea
                   id="message"
                   name="message"
+                  value={data.message}
+                  onChange={(e) =>
+                    setData({ ...data, message: e.target.value })
+                  }
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-hidden foucs:ring-2 focus:ring-primary resize-none"
                   placeholder="Hello, I'd like to talk about..."

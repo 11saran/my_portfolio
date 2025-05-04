@@ -53,6 +53,16 @@ const projects = [
       "https://home-service-d1s5-git-main-sarans-projects-334895e6.vercel.app/",
     githubUrl: "https://github.com/11saran/home_service",
   },
+  {
+    id: 6,
+    title: "Blood Connect Mobile App",
+    description:
+      "Developed a cross-platform mobile application using React Native. The app connects blood donors and recipients.",
+    image: "/projects/project 06.jpg",
+    tags: ["ReactNative","Node.js", "Express.js", "MySql"],
+    demoUrl: "#",
+    githubUrl: "https://github.com/11saran/Blood_Connect",
+  },
 ];
 
 const ProjectsSection = () => {
