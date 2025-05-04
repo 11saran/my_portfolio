@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { cn } from "../lib/utils";
 import { Menu, X } from "lucide-react";
+import ThemeToggle from "./ThemeToggle";
+
 
 const navItems = [
   { name: "Home", href: "#hero" },
@@ -30,11 +32,16 @@ const Navbar = () => {
         isScrolled ? "py-3 bg-background/80 backdrop-blur-md shadow-xs" : "py-5"
       )}
     >
-      <div className="container flex items-center justify-between">
+      <div className="container flex items-center justify-between ">
         <a
           href="#hero"
-          className="text-xl font-bold text-primary flex items-center"
+          className="text-xl font-bold text-primary flex items-center "
         >
+          <img
+            src="/src/assets/Logo.png" 
+            alt="Logo"
+            className="h-22 w-25" 
+          />
           <span className="relative z-10">
             <span className="text-glow text-foreground">Saran's</span> Portfolio
           </span>
@@ -56,7 +63,7 @@ const Navbar = () => {
         {/* Mobile Menu */}
         <button
           onClick={() => setIsMenuOpen((prev) => !prev)}
-          className="md:hidden p-2 text-foreground z-50"
+          className="md:hidden p-10 text-foreground z-50"
           aria-label={isMenuOpen ? "close Menu" : "Open Menu"}
         >
           {isMenuOpen ? <X size={24} /> : <Menu size={24} />}{" "}
@@ -84,6 +91,7 @@ const Navbar = () => {
             ))}
           </div>
         </div>
+        <ThemeToggle/>
       </div>
     </nav>
   );

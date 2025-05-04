@@ -20,7 +20,6 @@ const HeroSection = () => {
                Saran
              </span>
            </h1>
-
            <p className="text-lg md:text-xl text-muted-foreground max-2-2xl mx-auto opacity-0 animate-fade-in-delay-3">
              I'm a Full-Stack Developer (MERN) and Mobile App Developer (React
              Native). I build fast, responsive web apps and smooth,
