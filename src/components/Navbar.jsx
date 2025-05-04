@@ -37,11 +37,11 @@ const Navbar = () => {
           href="#hero"
           className="text-xl font-bold text-primary flex items-center "
         >
-          <img
+          {/* <img
             src="/src/assets/Logo.png" 
             alt="Logo"
             className="h-22 w-25" 
-          />
+          /> */}
           <span className="relative z-10">
             <span className="text-glow text-foreground">Saran's</span> Portfolio
           </span>
