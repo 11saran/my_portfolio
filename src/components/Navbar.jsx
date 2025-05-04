@@ -38,7 +38,7 @@ const Navbar = () => {
           className="text-xl font-bold text-primary flex items-center "
         >
           <img
-            src="/src/assets/Logo.png" 
+            src="/public/Logo.png" 
             alt="Logo"
             className="h-22 w-25" 
           />
