@@ -10,7 +10,7 @@ import {
   MapPin,
   Phone,
   Send,
-  Twitter,
+  // Twitter,
 } from "lucide-react";
 
 const ContactSection = () => {
@@ -114,22 +114,31 @@ const [data, setData] = useState({
 
             <div className="pt-8">
               <h4 className="font-medium mb-4"> Connect With Me</h4>
-              <div className="flex space-x-4 justify-center">
+              <div className="flex space-x-4 justify-center ">
                 <a
+                  className="hover:text-primary"
                   href="https://www.linkedin.com/in/kalaithasan-saran"
                   target="_blank"
                 >
                   <Linkedin />
                 </a>
-                <a href="https://github.com/11saran" target="_blank">
+                <a
+                  className="hover:text-primary"
+                  href="https://github.com/11saran"
+                  target="_blank"
+                >
                   <Github />
                 </a>
-                <a href="#" target="_blank">
+                <a
+                  className="hover:text-primary"
+                  href="https://www.instagram.com/11sksaran?utm_source=qr&igsh=azkwc2U2MmQ3MnZw"
+                  target="_blank"
+                >
                   <Instagram />
                 </a>
-                <a href="#" target="_blank">
+                {/* <a href="#" target="_blank">
                   <Twitter />
-                </a>
+                </a> */}
               </div>
             </div>
           </div>
